@@ -10,6 +10,29 @@
 */
 /*-------------------------------------------------------------------------- */
 
+/*-------------------------------------------------------------------------- */
+/*
+        anchor
+*/
+/*-------------------------------------------------------------------------- */
+
+
+a.anchor{
+    position:relative;
+    top:-50px;
+}
+
+a#anchor-home{
+    top:0;
+}
+
+
+/*-------------------------------------------------------------------------- */
+/*
+        menu
+*/
+/*-------------------------------------------------------------------------- */
+
 
 #menu{
 
@@ -23,26 +46,27 @@
     &.loaded{
 
         div.backing,
-        div.links,
         div.logo,
-        ul,
-        a,
-        a span{
-            .transition(all .5s ease-in);
+        div.links,
+        div.links ul,
+        div.links a,
+        div.links a span,
+        div.links a::after{
+            .transition(all .4s ease-in);
         }
 
     }
 
     div.logo{
         position:absolute;
-        z-index:2;
+        z-index:3;
         opacity:0;
         left:20px;
-        top:10px;
+        top:11px;
     }
 
     div.backing{
-        box-shadow:0 -1px 0 #4372a7 inset, 0 1px 0 #add7fb inset, 0 0 5px rgba(0, 0, 0, .2);
+        box-shadow:0 -1px 0 #4372a7 inset, 0 1px 0 #add7fb inset, 0 0 10px rgba(0, 0, 0, .3);
        .linear-gradient(top, #81baff, #4081cc);
         position:absolute;
         height:100%;
@@ -54,49 +78,70 @@
     }
 
     div.links{
+
          position:relative;
          text-align:center;
          z-index:2;
          margin:0;
-    }
 
-    ul{
-        display:inline-block;
-        list-style:none;
-        padding:15px;
-        margin:0;
-    }
+         ul{
+             display:inline-block;
+             list-style:none;
+             padding:15px;
+             margin:0;
+         }
 
-    li{
-        display:inline-block;
-    }
+         li{
+             display:inline-block;
+         }
 
-    a{
-        box-shadow:0 -1px 0 #4372a7 inset, 0 1px 0 #add7fb inset, 0 0 5px rgba(0, 0, 0, .2);
-       .linear-gradient(top, #7fbdfc, #285894);
-        display:inline-block;
-        border-radius:55px;
-        margin:0 5px;
-        padding:3px;
-    }
+         a{
+             box-shadow:0 -1px 0 #4372a7 inset, 0 1px 0 #add7fb inset, 0 0 5px rgba(0, 0, 0, .2);
+            .linear-gradient(top, #7fbdfc, #285894);
+             display:inline-block;
+             border-radius:55px;
+             position:relative;
+             margin:0 5px;
+             padding:3px;
+         }
 
-    a span{
-        box-shadow:0 -1px 0 #5f9de3 inset, 0 1px 0 #a6d4ff inset;
-        text-shadow:0 1px 1px rgba(0, 0, 0, .6);
-       .linear-gradient(top, #81baff, #4081cc);
-        text-decoration:none;
-        display:inline-block;
-        border-radius:55px;
-        padding:5px 15px;
-        font-size:13px;
-        color:#fff;
+         a span{
+             box-shadow:0 -1px 0 #5f9de3 inset, 0 1px 0 #a6d4ff inset;
+             text-shadow:0 1px 1px rgba(0, 0, 0, .6);
+            .linear-gradient(top, #81baff, #4081cc);
+             text-decoration:none;
+             display:inline-block;
+             border-radius:55px;
+             padding:5px 15px;
+             font-size:13px;
+             color:#fff;
+         }
+
+         a::after{
+             border:solid transparent;
+             border-color:rgba(255, 255, 255, 0);
+             border-top-color:#fff;
+             pointer-events:none;
+             position:absolute;
+             border-width:10px;
+             margin-left:-10px;
+             margin-top:20px;
+             z-index:1000;
+             content:" ";
+             top:-100%;
+             opacity:0;
+             height:0;
+             left:50%;
+             width:0;
+         }
+
     }
 
     &.open{
 
         div.logo{
             opacity:1;
-            top:5px;
+            top:6px;
         }
 
         div.backing{
@@ -104,23 +149,35 @@
         }
 
         div.links{
+
             padding-right:0 !important;
-        }
 
-        ul{
-            padding:10px 15px 10px 95px;
-        }
 
-        a{
-            background:transparent;
-            box-shadow:none;
-            padding:0;
-            margin:0;
-        }
+            ul{
+                /*
+                    that 79px is all the space removed horizontally in the animation - in this case 64px
+                    this hack helps keep the menu aligned even if loaded from a scrolled location.
+                    16 * 4
+                */
+                padding:10px 15px 12px 79px;
+            }
 
-        a span{
-            background:transparent;
-            box-shadow:none;
+            a{
+                background:transparent;
+                box-shadow:none;
+                padding:0;
+                margin:0;
+            }
+
+            a span{
+                background:transparent;
+                box-shadow:none;
+            }
+
+            a.selected::after{
+                opacity:1;
+            }
+
         }
 
     }

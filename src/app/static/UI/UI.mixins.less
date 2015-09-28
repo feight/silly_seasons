@@ -101,3 +101,20 @@
          -o-filter:@val;
             filter:@val;
 }
+
+
+/*-------------------------------------------------------------------------- */
+/*
+        Woff Font
+*/
+/*-------------------------------------------------------------------------- */
+
+
+.font(@name, @path){
+    @font-face{
+        font-family:'@{name}';
+        src:
+            url('@{path}.eot?#iefix') format('embedded-opentype'),
+            url('@{path}.woff') format('woff');
+    }
+}

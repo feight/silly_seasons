@@ -2,13 +2,21 @@
 
 {% block content %}
 
+    <a name="home" id="anchor-home" class="anchor"></a>
+
     <div id="menu">
 
         <div class="backing"></div>
 
         <div class="logo">
 
-            <img src="/static/UI/menu/resized/menu.logo.png" />
+            <a href="#home">
+
+                <img src="/static/UI/menu/resized/menu.logo.png"
+                  srcset="/static/UI/menu/resized/menu.logo.png 1x,
+                          /static/UI/menu/resized/menu.logo@2x.png 2x" />
+
+            </a>
 
         </div>
 
@@ -16,38 +24,23 @@
 
             <ul>
                 <li>
-                    <a href="#home">
-                        <span>
-                            Silly Seasons
-                        </span>
-                    </a>
-                </li>
-                <li>
                     <a href="#synopsis">
-                        <span>
-                            Synopsis
-                        </span>
+                        <span>Synopsis</span>
                     </a>
                 </li>
                 <li>
                     <a href="#flying-circus">
-                        <span>
-                            Flying Circus
-                        </span>
+                        <span>Flying Circus</span>
                     </a>
                 </li>
                 <li>
                     <a href="#girls">
-                        <span>
-                            The Girls
-                        </span>
+                        <span>The Girls</span>
                     </a>
                 </li>
                 <li>
                     <a href="#cast">
-                        <span>
-                            The Cast
-                        </span>
+                        <span>The Cast</span>
                     </a>
                 </li>
             </ul>
@@ -59,28 +52,51 @@
     <div id="banner">
 
         <div class="stretch-wrap">
+
             <div class="stretch">
-                <img src="/static/UI/banner/resized/banner.jpg" />
+
+                <img src="/static/UI/banner/resized/banner.jpg"
+                  srcset="/static/UI/banner/resized/banner.jpg 1x,
+                          /static/UI/banner/resized/banner@2x.jpg 2x" />
+
             </div>
+
         </div>
 
     </div>
 
     <div id="stages">
 
-        <div class="stage stage-home">
-
-            Silly Seasons
-
-        </div>
-
         <div class="stage stage-synopsis">
 
-            Synopsis
+            <a name="synopsis" id="anchor-synopsis" class="anchor"></a>
+
+            <div class="container">
+
+                <h1>Synopsis</h1>
+
+                <h2>Synopsis</h2>
+
+                <p>
+                    Silly Seasons is an animated CG comedy featuring the escapades of four girls, Daisy,
+                    Summer, Ginger and Snowflake, who all live in the town of Sillyville with a supporting
+                    cast of offbeat animals and flowers.  The 26 x 24' series is a lighthearted and
+                    irreverent take on relationships and life in general; the show is aimed at 8-12 y.o. girls.
+                </p>
+
+                <p>
+                    The four girls are the only humans in the series as well as the only kids. All the other
+                    characters - anthropomorphic animals and plants - are adults. This forms the foundation for
+                    comedy, as the series parodies adult behavior and attitudes towards kids in a fun and humorous way.
+                </p>
+
+            </div>
 
         </div>
 
         <div class="stage stage-flying-circus">
+
+            <a name="flying-circus" id="anchor-flying-circus" class="anchor"></a>
 
             Flying Circus
 
@@ -88,11 +104,15 @@
 
         <div class="stage stage-girls">
 
+            <a name="girls" id="anchor-girls" class="anchor"></a>
+
             The Girls
 
         </div>
 
         <div class="stage stage-cast">
+
+            <a name="cast" id="anchor-cast" class="anchor"></a>
 
             The Cast
 
