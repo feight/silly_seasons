@@ -1,0 +1,9 @@
+{
+    "name" : "PeterodactylGrunt",
+    "private" : true,
+    "version" : "0.0.0",
+    "devDependencies" : {
+        "grunt" : "0.4.x",
+        "horde" : "git@github.com:sweetlikepete/horde.git#v0.0.3"
+    }
+}

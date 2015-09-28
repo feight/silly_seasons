@@ -1,0 +1,3 @@
+[submodule "src/gaext"]
+	path = src/gaext
+	url = git@github.com:sweetlikepete/gaext.git

@@ -1,0 +1,133 @@
+
+
+@import "/UI/UI.variables.less";
+@import "/UI/UI.mixins.less";
+
+
+/*-------------------------------------------------------------------------- */
+/*
+        UI.banner
+*/
+/*-------------------------------------------------------------------------- */
+
+/*-------------------------------------------------------------------------- */
+/*
+        variables
+*/
+/*-------------------------------------------------------------------------- */
+
+
+@background : #008eca;
+@width      : 1600px;
+@height     : 600px;
+@offset     : 0.1;
+
+@width_tablet  : 960px;
+@height_tablet : 360px;
+
+@width_mobile  : 1200px;
+@height_mobile : 450px;
+
+
+/*-------------------------------------------------------------------------- */
+/*
+        rules
+*/
+/*-------------------------------------------------------------------------- */
+
+
+
+div#banner{
+
+    overflow:hidden;
+    position:fixed;
+    height:@height;
+    width:100%;
+
+    div.stretch-wrap{
+       .transform(translate(-50%, -50%));
+        height:100% + (100% * @offset);
+        width:100% + (100% * @offset);
+        background:@background;
+        position:absolute;
+        z-index:0;
+        left:50%;
+        top:50%;
+    }
+
+    div.stretch{
+        height:@height + (@height * @offset);
+        position:absolute;
+        overflow:hidden;
+        z-index:-999998;
+        opacity:1;
+        padding:0;
+        margin:0;
+        left:0;
+        top:0;
+    }
+
+    img{
+        height:@height + (@height * @offset);
+        width:@width + (@width * @offset);
+        position:absolute;
+        z-index:-999999;
+        max-height:none;
+        max-width:none;
+        border:none;
+        padding:0;
+        margin:0;
+        top:0;
+    }
+
+}
+
+div#stages{
+    top:@height;
+}
+
+@media @tablet{
+
+    div#banner{
+
+        height:@height_tablet;
+
+        div.stretch{
+            height:@height_tablet + (@height_tablet * @offset);
+        }
+
+        img{
+            height:@height_tablet + (@height_tablet * @offset);
+            width:@width_tablet + (@width_tablet * @offset);
+        }
+
+    }
+
+    div#stages{
+        top:@height_tablet;
+    }
+
+}
+
+@media @mobile{
+
+    div#banner{
+
+        height:@height_mobile;
+
+        div.stretch{
+            height:@height_mobile + (@height_mobile * @offset);
+        }
+
+        img{
+            height:@height_mobile + (@height_mobile * @offset);
+            width:@width_mobile + (@width_mobile * @offset);
+        }
+
+    }
+
+    div#stages{
+        top:@height_mobile;
+    }
+
+}

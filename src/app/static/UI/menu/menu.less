@@ -1,0 +1,128 @@
+
+
+@import "/UI/UI.variables.less";
+@import "/UI/UI.mixins.less";
+
+
+/*-------------------------------------------------------------------------- */
+/*
+        UI.menu
+*/
+/*-------------------------------------------------------------------------- */
+
+
+#menu{
+
+    text-align:center;
+    position:fixed;
+    width:100%;
+    z-index:1;
+    left:0;
+    top:0;
+
+    &.loaded{
+
+        div.backing,
+        div.links,
+        div.logo,
+        ul,
+        a,
+        a span{
+            .transition(all .5s ease-in);
+        }
+
+    }
+
+    div.logo{
+        position:absolute;
+        z-index:2;
+        opacity:0;
+        left:20px;
+        top:10px;
+    }
+
+    div.backing{
+        box-shadow:0 -1px 0 #4372a7 inset, 0 1px 0 #add7fb inset, 0 0 5px rgba(0, 0, 0, .2);
+       .linear-gradient(top, #81baff, #4081cc);
+        position:absolute;
+        height:100%;
+        width:100%;
+        z-index:1;
+        opacity:0;
+        right:0;
+        top:0;
+    }
+
+    div.links{
+         position:relative;
+         text-align:center;
+         z-index:2;
+         margin:0;
+    }
+
+    ul{
+        display:inline-block;
+        list-style:none;
+        padding:15px;
+        margin:0;
+    }
+
+    li{
+        display:inline-block;
+    }
+
+    a{
+        box-shadow:0 -1px 0 #4372a7 inset, 0 1px 0 #add7fb inset, 0 0 5px rgba(0, 0, 0, .2);
+       .linear-gradient(top, #7fbdfc, #285894);
+        display:inline-block;
+        border-radius:55px;
+        margin:0 5px;
+        padding:3px;
+    }
+
+    a span{
+        box-shadow:0 -1px 0 #5f9de3 inset, 0 1px 0 #a6d4ff inset;
+        text-shadow:0 1px 1px rgba(0, 0, 0, .6);
+       .linear-gradient(top, #81baff, #4081cc);
+        text-decoration:none;
+        display:inline-block;
+        border-radius:55px;
+        padding:5px 15px;
+        font-size:13px;
+        color:#fff;
+    }
+
+    &.open{
+
+        div.logo{
+            opacity:1;
+            top:5px;
+        }
+
+        div.backing{
+            opacity:1;
+        }
+
+        div.links{
+            padding-right:0 !important;
+        }
+
+        ul{
+            padding:10px 15px 10px 95px;
+        }
+
+        a{
+            background:transparent;
+            box-shadow:none;
+            padding:0;
+            margin:0;
+        }
+
+        a span{
+            background:transparent;
+            box-shadow:none;
+        }
+
+    }
+
+}
