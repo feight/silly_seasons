@@ -1,5 +1,72 @@
 
 
+/*-------------------------------------------------------------------------- */
+/*
+        UI.variables
+*/
+/*-------------------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------ */
+/*
+        Media Queries
+*/
+/* ------------------------------------------------------------------------ */
+
+
+@highdensity:   ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+                ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+                ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+                ~"only screen and (min-device-pixel-ratio: 1.5)";
+
+@mobile:          ~"only screen and (max-width: 529px)";
+@mobile-retina:   ~"only screen and (max-width: 529px) and (-webkit-min-device-pixel-ratio: 1.5)",
+                  ~"only screen and (max-width: 529px) and (min--moz-device-pixel-ratio: 1.5)",
+                  ~"only screen and (max-width: 529px) and (-o-min-device-pixel-ratio: 3/2)",
+                  ~"only screen and (max-width: 529px) and (min-device-pixel-ratio: 1.5)";
+@tablet:          ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@tablet-retina:   ~"only screen and (min-width: 530px) and (max-width: 949px) and (-webkit-min-device-pixel-ratio: 1.5)",
+                  ~"only screen and (min-width: 530px) and (max-width: 949px) and (min--moz-device-pixel-ratio: 1.5)",
+                  ~"only screen and (min-width: 530px) and (max-width: 949px) and (-o-min-device-pixel-ratio: 3/2)",
+                  ~"only screen and (min-width: 530px) and (max-width: 949px) and (min-device-pixel-ratio: 1.5)";
+@tablet-v:        ~"only screen and (max-width: 800px)";
+@tablet-v-retina: ~"only screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1.5)",
+                  ~"only screen and (max-width: 800px) and (min--moz-device-pixel-ratio: 1.5)",
+                  ~"only screen and (max-width: 800px) and (-o-min-device-pixel-ratio: 3/2)",
+                  ~"only screen and (max-width: 800px) and (min-device-pixel-ratio: 1.5)";
+@desktop:         ~"only screen and (min-width: 801px)";
+@desktop-retina:  ~"only screen and (min-width: 801px) and (-webkit-min-device-pixel-ratio: 1.5)",
+                  ~"only screen and (min-width: 801px) and (min--moz-device-pixel-ratio: 1.5)",
+                  ~"only screen and (min-width: 801px) and (-o-min-device-pixel-ratio: 3/2)",
+                  ~"only screen and (min-width: 801px) and (min-device-pixel-ratio: 1.5)";
+
+
+@bootstrap-sm: ~"only screen and (max-width: 750px)";
+@bootstrap-md: ~"only screen and (max-width: 970px)";
+@bootstrap-lg: ~"only screen and (max-width: 1170px)";
+
+
+/*-------------------------------------------------------------------------- */
+/*
+        Retina Image
+*/
+/*-------------------------------------------------------------------------- */
+
+
+.retina-image (@file, @repeat, @width, @height, @posx, @posy) {
+
+    background-image : url('@{file}');
+    background-position : @posx @posy;
+    background-repeat : @repeat;
+
+    @retina_path : ~`@{file}.replace(/\.(jpg|jpeg|gif|png)$/i, '@2x.$1')`;
+
+    @media @highdensity {
+        background-image : url(@retina_path);
+        background-size : @width @height;
+    }
+
+}
+
 
 /*-------------------------------------------------------------------------- */
 /*
@@ -118,3 +185,4 @@
             url('@{path}.woff') format('woff');
     }
 }
+

@@ -30,6 +30,8 @@
 
             this.menu.initialize();
 
+            this.stages.initialize();
+
             window.setTimeout(function(){
 
                 $(window).trigger("scroll").trigger("resize");

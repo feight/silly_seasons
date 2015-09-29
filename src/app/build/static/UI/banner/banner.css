@@ -3,11 +3,21 @@
         UI.variables
 */
 /*-------------------------------------------------------------------------- */
+/*-------------------------------------------------------------------------- */
+/*
+        UI.variables
+*/
+/*-------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------ */
 /*
         Media Queries
 */
 /* ------------------------------------------------------------------------ */
+/*-------------------------------------------------------------------------- */
+/*
+        Retina Image
+*/
+/*-------------------------------------------------------------------------- */
 /*-------------------------------------------------------------------------- */
 /*
         Linear Gradients
@@ -61,7 +71,7 @@
 div#banner {
   overflow: hidden;
   position: fixed;
-  height: 600px;
+  height: 550px;
   width: 100%;
   top: 0;
 }
@@ -81,7 +91,7 @@ div#banner div.stretch-wrap {
   top: 50%;
 }
 div#banner div.stretch {
-  height: 660px;
+  height: 605px;
   position: absolute;
   overflow: hidden;
   z-index: -999998;
@@ -92,7 +102,7 @@ div#banner div.stretch {
   top: 0;
 }
 div#banner img {
-  height: 660px;
+  height: 605px;
   width: 1760px;
   position: absolute;
   z-index: -999999;
@@ -104,7 +114,7 @@ div#banner img {
   top: 0;
 }
 div#stages {
-  top: 600px;
+  top: 550px;
 }
 @media only screen and (min-width: 530px) and (max-width: 949px) {
   div#banner {
