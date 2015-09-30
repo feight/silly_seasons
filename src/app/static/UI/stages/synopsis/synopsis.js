@@ -36,7 +36,7 @@
 
                 var st = win.scrollTop() + win.height();
                 var top = content.offset().top;
-                var margin = (win.height() * .5);
+                var margin = (win.height() * 0.5);
                 var percent = 0;
 
                 if(st > top){
