@@ -173,6 +173,8 @@ module.exports = function(grunt){
         var images = horde.utils.files.expand(statics, "*.{jpg,jpeg,png}");
 
         horde.utils.promise()
+        .then(function(){ return horde.tasks.images.responsive(statics); })
+        .then(function(){ return horde.tasks.images.sizes(statics); })
         .then(function(){ return horde.tasks.images.compress(images); })
         .then(function(){ return horde.tasks.display.image(paths.logo, 15); })
         .then(function(){ return horde.tasks.display.complete("Built all the images"); })
