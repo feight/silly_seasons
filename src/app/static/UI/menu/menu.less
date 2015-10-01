@@ -59,7 +59,7 @@ a#anchor-home{
 
     div.logo{
         position:absolute;
-        z-index:3;
+        z-index:6;
         opacity:0;
         left:20px;
         top:11px;
@@ -71,17 +71,29 @@ a#anchor-home{
         position:absolute;
         height:100%;
         width:100%;
-        z-index:1;
+        z-index:5;
         opacity:0;
         right:0;
         top:0;
+    }
+
+    span.menu-toggle{
+        text-shadow:0 1px 1px rgba(0, 0, 0, .3);
+        position:absolute;
+        cursor:pointer;
+        font-size:23px;
+        display:none;
+        color:#fff;
+        right:18px;
+        z-index:6;
+        top:7px;
     }
 
     div.links{
 
          position:relative;
          text-align:center;
-         z-index:2;
+         z-index:6;
          margin:0;
 
          ul{
@@ -158,7 +170,6 @@ a#anchor-home{
 
             padding-right:0 !important;
 
-
             ul{
                 /*
                     that 79px is all the space removed horizontally in the animation - in this case 64px
@@ -184,6 +195,78 @@ a#anchor-home{
                 opacity:1;
             }
 
+        }
+
+    }
+
+    @media @mobile{
+
+        &,
+        &.open{
+
+            div.logo{
+                opacity:1;
+                top:4px;
+            }
+
+            div.backing{
+                height:50px;
+                opacity:1;
+            }
+
+            span.menu-toggle{
+                display:block;
+            }
+
+            div.links{
+
+                padding-right:0 !important;
+                z-index:4;
+
+                ul{
+                    position:absolute;
+                    text-align:center;
+                    background:#fff;
+                    overflow:hidden;
+                    padding:0;
+                    height:0;
+                    top:50px;
+                    right:0;
+                    left:0;
+                }
+
+                a{
+                    background:transparent;
+                    box-shadow:none;
+                    padding:0;
+                    margin:0;
+                }
+
+                a span{
+                    background:transparent;
+                    text-shadow:none;
+                    box-shadow:none;
+                    font-size:12px;
+                    color:#333;
+                }
+
+                a.selected::after{
+                    opacity:1;
+                }
+
+                a::after{
+                    border-top-color:#666;
+                }
+
+            }
+
+        }
+
+        &.toggled div.links ul{
+            box-shadow:0 0 10px rgba(0, 0, 0, .3);
+            border-bottom:1px solid #aaa;
+            padding:8px 0 8px 0;
+            height:45px;
         }
 
     }

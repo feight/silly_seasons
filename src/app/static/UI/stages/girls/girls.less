@@ -13,7 +13,48 @@
 
 div#stages div.stage-girls{
 
-   .retina-image("/static/UI/stages/girls/resized/girls.background.png", no-repeat, 1750px, 218px, left, top);
+    text-shadow:0 1px 0 rgba(255, 255, 255, 1);
+   .linear-gradient(top, #fff, #eee);
     z-index:2;
+
+    div.wrap{
+
+       .retina-image("/static/UI/stages/girls/resized/girls.background.png", no-repeat, 1750px, 218px, left, top);
+        padding:0 0 45px 0;
+
+        @media @mobile{
+            background-position:-220px -40px;
+        }
+
+    }
+
+    h2{
+        text-align:center;
+        font-family:silly;
+        font-size:45px;
+    }
+
+    div.image{
+
+        display:table;
+        height:400px;
+        width:100%;
+
+        div.image-wrap{
+            vertical-align:bottom;
+            display:table-cell;
+            text-align:center;
+        }
+
+        img{
+            max-width:100%;
+        }
+
+    }
+
+    div.girls-daisy     { color:#e47fb0; }
+    div.girls-summer    { color:#ffb300; }
+    div.girls-ginger    { color:#ff2f3f; }
+    div.girls-snowflake { color:#3e7bc0; }
 
 }

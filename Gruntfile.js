@@ -73,8 +73,8 @@ module.exports = function(grunt){
             horde.utils.promise()
             .then(function(){ return horde.tasks.bower.install(statics, paths.bower); })
             .then(function(){ return horde.tasks.lint.all(statics); })
-            .then(function(){ return horde.tasks.images.responsive(statics); })
-            .then(function(){ return horde.tasks.images.sizes(statics); })
+            //.then(function(){ return horde.tasks.images.responsive(statics); })
+            //.then(function(){ return horde.tasks.images.sizes(statics); })
             .then(function(){ return horde.tasks.compile.all(statics, minify); })
             .then(function(){
 
