@@ -73,8 +73,23 @@ module.exports = function(grunt){
             horde.utils.promise()
             .then(function(){ return horde.tasks.bower.install(statics, paths.bower); })
             .then(function(){ return horde.tasks.lint.all(statics); })
-            //.then(function(){ return horde.tasks.images.responsive(statics); })
-            //.then(function(){ return horde.tasks.images.sizes(statics); })
+            .then(function(){ return horde.tasks.images.responsive(statics); })
+            .then(function(){ return horde.tasks.images.sizes(statics); })
+            .then(function(){ return compress(); })
+            .catch(reject)
+            .then(resolve);
+
+        });
+
+    };
+
+    var compress = function(){
+
+        return new Promise(function(resolve, reject){
+
+            var path = require("path");
+
+            horde.utils.promise()
             .then(function(){ return horde.tasks.compile.all(statics, minify); })
             .then(function(){
 
@@ -123,7 +138,7 @@ module.exports = function(grunt){
     /* -------------------------------------------------------------------- */
 
 
-    grunt.registerTask("build", "Builds a site.", function(){
+    grunt.registerTask("build", "Builds the site.", function(){
 
         horde.utils.promise()
         .then(function(){ return build(); })
@@ -136,26 +151,7 @@ module.exports = function(grunt){
     grunt.registerTask("compress", "Compresses all assets.", function(){
 
         horde.utils.promise()
-        .then(function(){ return horde.tasks.compile.all(statics, minify); })
-        .then(function(){
-
-            return horde.tasks.compile.less([
-                "src/app/static/lib/bower/bootstrap/less/bootstrap.less"
-            ], horde.utils.extend(minify, {
-                less : {
-                    paths : [
-                        "src/app/static/lib/bower/bootstrap/less/"
-                    ],
-                    modifyVars : {
-                        "icon-font-path" : "'/static/lib/bower/bootstrap/fonts/'"
-                    }
-                }
-            }));
-
-        })
-        .then(function(){ return horde.tasks.minify.all([ paths.build ]); })
-        .then(function(){ return horde.tasks.minify.all(statics, minify); })
-        .then(function(){ return horde.tasks.compress(paths.templates, bundle, minify); })
+        .then(function(){ return compress(); })
         .then(this.async());
 
     });
