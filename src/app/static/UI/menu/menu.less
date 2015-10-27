@@ -20,7 +20,7 @@
 a.anchor{
 
     position:absolute;
-    top:-50px;
+    top:-105px;
 
     @media @mobile{
         top:-95px;
@@ -42,33 +42,17 @@ a#anchor-home{
 
 #menu{
 
+    background:url("/static/UI/menu/menu.background.png") top center repeat-x;
     text-align:center;
     position:fixed;
+    height:160px;
     width:100%;
     z-index:99;
     left:0;
     top:0;
 
-    &.loaded{
-
-        div.backing,
-        div.logo,
-        div.links,
-        div.links ul,
-        div.links a,
-        div.links a span,
-        div.links a::after{
-            .transition(all .4s ease-in);
-        }
-
-    }
-
-    div.logo{
-        position:absolute;
-        z-index:6;
-        opacity:0;
-        left:20px;
-        top:11px;
+    div.mobile-logo{
+        display:none;
     }
 
     div.backing{
@@ -103,16 +87,11 @@ a#anchor-home{
          margin:0;
 
          ul{
-
-             padding:40px 15px 15px 15px;
+             padding:15px 15px 5px 15px;
              display:inline-block;
+             white-space:nowrap;
              list-style:none;
              margin:0;
-
-             @media @tablet{
-                 padding-top:20px;
-             }
-
          }
 
          li{
@@ -120,148 +99,103 @@ a#anchor-home{
          }
 
          a{
-             box-shadow:0 -1px 0 #4372a7 inset, 0 1px 0 #add7fb inset, 0 0 5px rgba(0, 0, 0, .2);
-            .linear-gradient(top, #7fbdfc, #285894);
+
+             text-shadow:0 1px 2px rgba(0, 0, 0, .3);
              display:inline-block;
-             border-radius:55px;
+             vertical-align:top;
              position:relative;
+             font-family:silly;
+             font-size:22px;
              margin:0 5px;
              padding:3px;
-         }
-
-         a span{
-             box-shadow:0 -1px 0 #5f9de3 inset, 0 1px 0 #a6d4ff inset;
-             text-shadow:0 1px 1px rgba(0, 0, 0, .6);
-            .linear-gradient(top, #81baff, #4081cc);
-             text-decoration:none;
-             display:inline-block;
-             border-radius:55px;
-             padding:5px 15px;
-             font-size:13px;
              color:#fff;
+             top:45px;
+
+             &.logo{
+
+                 padding:0;
+                 top:0;
+
+                 img{
+                     height:162px;
+                     width:240px;
+                 }
+
+             }
+
+             &:hover{
+                 text-decoration:underline;
+             }
+
          }
-
-         a::after{
-             border:solid transparent;
-             border-color:rgba(255, 255, 255, 0);
-             border-top-color:#fff;
-             pointer-events:none;
-             position:absolute;
-             border-width:10px;
-             margin-left:-10px;
-             margin-top:20px;
-             z-index:1000;
-             content:" ";
-             top:-100%;
-             opacity:0;
-             height:0;
-             left:50%;
-             width:0;
-         }
-
-    }
-
-    &.open{
-
-        div.logo{
-            opacity:1;
-            top:6px;
-        }
-
-        div.backing{
-            opacity:1;
-        }
-
-        div.links{
-
-            padding-right:0 !important;
-
-            ul{
-                /*
-                    that 79px is all the space removed horizontally in the animation - in this case 64px
-                    this hack helps keep the menu aligned even if loaded from a scrolled location.
-                    16 * 4
-                */
-                padding:10px 15px 12px 79px;
-            }
-
-            a{
-                background:transparent;
-                box-shadow:none;
-                padding:0;
-                margin:0;
-            }
-
-            a span{
-                background:transparent;
-                box-shadow:none;
-            }
-
-            a.selected::after{
-                opacity:1;
-            }
-
-        }
 
     }
 
     @media @mobile{
 
-        &,
-        &.open{
+        background:none;
+        height:auto;
 
-            div.logo{
-                opacity:1;
-                top:4px;
+        div.mobile-logo{
+            position:absolute;
+            display:block;
+            z-index:6;
+            left:20px;
+            top:4px;
+        }
+
+        div.backing{
+            height:50px;
+            opacity:1;
+        }
+
+        span.menu-toggle{
+            display:block;
+        }
+
+        div.links{
+
+            padding-right:0 !important;
+            z-index:4;
+
+            ul{
+                position:absolute;
+                text-align:center;
+                background:#fff;
+                overflow:hidden;
+                padding:0;
+                height:0;
+                top:50px;
+                right:0;
+                left:0;
             }
 
-            div.backing{
-                height:50px;
-                opacity:1;
-            }
+            a{
 
-            span.menu-toggle{
-                display:block;
-            }
+                background:transparent;
+                box-shadow:none;
+                font-size:19px;
+                color:#336699;
+                margin:0 5px;
+                padding:0;
+                top:0;
 
-            div.links{
-
-                padding-right:0 !important;
-                z-index:4;
-
-                ul{
-                    position:absolute;
-                    text-align:center;
-                    background:#fff;
-                    overflow:hidden;
-                    padding:0;
-                    height:0;
-                    top:50px;
-                    right:0;
-                    left:0;
-                }
-
-                a{
-                    background:transparent;
-                    box-shadow:none;
-                    padding:0;
-                    margin:0;
-                }
-
-                a span{
+                span{
                     background:transparent;
                     text-shadow:none;
                     box-shadow:none;
-                    font-size:12px;
-                    color:#333;
                 }
 
-                a.selected::after{
+                &.selected::after{
                     opacity:1;
                 }
 
-                a::after{
+                &::after{
                     border-top-color:#666;
+                }
+
+                &.logo{
+                    display:none;
                 }
 
             }

@@ -18,15 +18,15 @@
 
 
 @background : #008eca;
-@width      : 1600px;
-@height     : 540px;
+@width      : 1920px;
+@height     : 1152px;
 @offset     : 0.1;
 
 @width_tablet  : 960px;
-@height_tablet : 324px;
+@height_tablet : 576px;
 
-@width_mobile  : 960px;
-@height_mobile : 324px;
+@width_mobile  : 500px;
+@height_mobile : 300px;
 
 
 /*-------------------------------------------------------------------------- */
@@ -89,9 +89,14 @@ div#stages{
 
 @media @tablet{
 
+    div#stages{
+        margin:85px 0 0 0;
+    }
+
     div#banner{
 
         height:@height_tablet;
+        margin:85px 0 0 0;
 
         div.stretch{
             height:@height_tablet + (@height_tablet * @offset);
@@ -112,9 +117,14 @@ div#stages{
 
 @media @mobile{
 
+    div#stages{
+        margin:50px 0 0 0;
+    }
+
     div#banner{
 
         height:@height_mobile;
+        margin:50px 0 0 0;
 
         div.stretch{
             height:@height_mobile + (@height_mobile * @offset);
