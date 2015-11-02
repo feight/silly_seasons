@@ -100,8 +100,6 @@
                             top = $("#anchor-" + id).offset().top;
                         }
 
-                        console.log("WTF");
-
                         body.stop().animate({ scrollTop : top }, 500, "swing");
 
                         e.preventDefault();
