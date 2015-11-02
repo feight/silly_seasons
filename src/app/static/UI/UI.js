@@ -32,6 +32,11 @@
 
             this.stages.initialize();
 
+            $(".modal").on("hidden.bs.modal", function(){
+                $(".modal-body").html("<iframe src='https://www.youtube.com/embed/z8z7zVeXBik' frameborder='0' allowfullscreen></iframe>");
+            });
+
+
             window.setTimeout(function(){
 
                 $(window).trigger("scroll").trigger("resize");
