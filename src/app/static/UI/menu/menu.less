@@ -20,7 +20,7 @@
 a.anchor{
 
     position:absolute;
-    top:-105px;
+    top:-95px;
 
     @media @mobile{
         top:-95px;
@@ -81,6 +81,7 @@ a#anchor-home{
 
     div.links{
 
+         vertical-align:top;
          position:relative;
          text-align:center;
          z-index:6;
@@ -90,17 +91,20 @@ a#anchor-home{
              padding:15px 15px 5px 15px;
              display:inline-block;
              white-space:nowrap;
+             vertical-align:top;
              list-style:none;
              margin:0;
          }
 
          li{
              display:inline-block;
+             vertical-align:top;
          }
 
          a{
 
              text-shadow:0 1px 2px rgba(0, 0, 0, .3);
+             text-decoration:none;
              display:inline-block;
              vertical-align:top;
              position:relative;
@@ -125,6 +129,39 @@ a#anchor-home{
 
              &:hover{
                  text-decoration:underline;
+             }
+
+         }
+
+         div.social{
+
+             position:absolute;
+             right:25px;
+             z-index:5;
+             top:-35px;
+
+             a{
+
+                 background-image:url("/static/UI/menu/menu.social.sprites.png");
+                 background-repeat:no-repeat;
+                 display:inline-block;
+                 cursor:pointer;
+                 height:36px;
+                 width:36px;
+                 margin:2px;
+
+                 &.facebook{
+                     background-position:0 0;
+                 }
+
+                 &.youtube{
+                     background-position:-36px 0;
+                 }
+
+                 &.email{
+                     background-position:-72px 0;
+                 }
+
              }
 
          }
@@ -200,13 +237,30 @@ a#anchor-home{
 
             }
 
+            div.social{
+                border-bottom:1px solid #999;
+                background:#4DBEF9;
+                position:static;
+                padding:5px 0;
+            }
+
         }
 
-        &.toggled div.links ul{
+        &.toggled div.links div.wrap{
+
             box-shadow:0 0 10px rgba(0, 0, 0, .3);
             border-bottom:1px solid #aaa;
-            padding:8px 0 8px 0;
-            height:45px;
+            margin:50px 0 0 0;
+            background:#fff;
+            padding:0;
+
+            ul{
+                padding:10px 0 5px 0;
+                overflow:visible;
+                position:static;
+                height:auto;
+            }
+
         }
 
     }

@@ -26,37 +26,49 @@
 
         <div class="links">
 
-            <ul>
-                <li>
-                    <a href="#girls">
-                        <span>Characters</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#media">
-                        <span>Media</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/" class='logo'>
+            <div class="wrap">
 
-                        <img src="/static/UI/menu/resized/menu.logo.png"
-                          srcset="/static/UI/menu/resized/menu.logo.png 1x,
-                                  /static/UI/menu/resized/menu.logo@2x.png 2x" />
+                <div class="social">
 
-                    </a>
-                </li>
-                <li>
-                    <a href="#synopsis">
-                        <span>Synopsis</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#circus">
-                        <span>Flying Circus</span>
-                    </a>
-                </li>
-            </ul>
+                    <a class="facebook" href=""></a>
+                    <a class="youtube" href=""></a>
+                    <a class="email" href=""></a>
+
+                </div>
+
+                <ul>
+                    <li>
+                        <a href="#girls">
+                            <span>Characters</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#media">
+                            <span>Media</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/" class='logo'>
+
+                            <img src="/static/UI/menu/resized/menu.logo.png"
+                              srcset="/static/UI/menu/resized/menu.logo.png 1x,
+                                      /static/UI/menu/resized/menu.logo@2x.png 2x" />
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#synopsis">
+                            <span>Synopsis</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#circus">
+                            <span>Flying Circus</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
 
         </div>
 
@@ -82,7 +94,35 @@
 
             <a name="media" id="anchor-media" class="anchor"></a>
 
-            <iframe src="https://www.youtube.com/embed/z8z7zVeXBik" frameborder="0" allowfullscreen></iframe>
+            <div class="wrap">
+
+                <div class="container">
+
+                    <h1 class="fancy">Media</h1>
+
+                </div>
+
+                <div class="container">
+
+                    <div class="col-sm-6">
+
+                        <a class="media-box media-box-video" data-toggle="modal" data-target="#youtube-modal">
+                            <span>Video</span>
+                        </a>
+
+                    </div>
+
+                    <div class="col-sm-6">
+
+                        <a class="media-box media-box-wallpaper" href="/static/wallpapers/Silly-Seasons-Wallpaper-1.jpg" target="_new">
+                            <span>Wallpaper</span>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -92,24 +132,36 @@
 
             <div class="container">
 
-                <div class="col-md-7">
+                <div class="col-md-12">
 
-                    <h1>Synopsis</h1>
+                    <h1 class="fancy">Synopsis</h1>
 
-                    <p>
-                        Silly Seasons is an animated CG comedy featuring the escapades of four girls, Daisy,
-                        Summer, Ginger and Snowflake, who all live in the town of Sillyville with a supporting
-                        cast of offbeat animals and flowers.  The 26 x 24' series is a lighthearted and
-                        irreverent take on relationships and life in general; the show is aimed at 8-12 y.o. girls.
-                    </p>
+                    <div class="copy">
 
-                    <p>
-                        The four girls are the only humans in the series as well as the only kids. All the other
-                        characters - anthropomorphic animals and plants - are adults. This forms the foundation for
-                        comedy, as the series parodies adult behavior and attitudes towards kids in a fun and humorous way.
-                    </p>
+                        <div class="background"></div>
+
+                        <div class="foreground">
+
+                            <p>
+                                Silly Seasons is an animated CG comedy featuring the escapades of four girls, Daisy,
+                                Summer, Ginger and Snowflake, who all live in the town of Sillyville with a supporting
+                                cast of offbeat animals and flowers.  The 26 x 24' series is a lighthearted and
+                                irreverent take on relationships and life in general; the show is aimed at 8-12 y.o. girls.
+                            </p>
+
+                            <p>
+                                The four girls are the only humans in the series as well as the only kids. All the other
+                                characters - anthropomorphic animals and plants - are adults. This forms the foundation for
+                                comedy, as the series parodies adult behavior and attitudes towards kids in a fun and humorous way.
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
+
+                <div class="clearfix"></div>
 
             </div>
 
@@ -625,6 +677,19 @@
 
         </div>
 
+    </div>
+
+    <div class="modal fade" id="youtube-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <iframe src="https://www.youtube.com/embed/z8z7zVeXBik" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
     </div>
 
 {% endblock %}

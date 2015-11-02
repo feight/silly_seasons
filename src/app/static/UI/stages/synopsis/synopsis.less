@@ -13,30 +13,81 @@
 
 div#stages div.stage-synopsis{
 
-    background-image:url("/static/UI/stages/synopsis/resized/synopsis.background.jpg");
+    background-image:url("/static/UI/stages/synopsis/synopsis.background.jpg");
     text-shadow:0 1px 0 rgba(255, 255, 255, .3);
-    background-position:center bottom;
+    background-position:center top;
     background-repeat:no-repeat;
     background-color:#91ceec;
-    background-size:100%;
-    padding:30px 0 0 0;
-    color:#00405c;
-    height:790px;
+    padding:30px 0 350px 0;
+    background-size:cover;
     z-index:1;
 
     h1{
-        text-shadow:0 1px 0 rgba(255, 255, 255, .3);
-        padding:25px 0;
-        font-size:50px;
-        color:#005b84;
+        position:absolute;
+        padding:0;
+        top:130px;
+        left:25px;
     }
 
-    @media @tablet-v{
-        height:620px;
+    div.copy{
+
+        border-radius:5px;
+        position:relative;
+        font-family:silly;
+        overflow:hidden;
+        font-size:20px;
+        color:#0054a5;
+        top:200px;
+
+        div.background{
+            background-image:url("/static/UI/stages/synopsis/synopsis.background.jpg");
+            background-position:center -230px;
+            background-repeat:no-repeat;
+            background-color:#91ceec;
+            position:absolute;
+            -webkit-filter:blur(5px);
+               -moz-filter:blur(5px);
+                    filter:blur(5px);
+            height:100%;
+            width:100%;
+            z-index:1;
+            left:0;
+            top:0;
+            display:none;
+        }
+
+        div.foreground{
+            background:rgba(255, 255, 255, .7);
+            position:relative;
+            padding:50px;
+            z-index:2;
+        }
+
     }
 
     @media @mobile{
-        height:595px;
+
+        padding-bottom:280px;
+
+        h1{
+            top:50px;
+        }
+
+        div.copy{
+
+            font-size:17px;
+            top:120px;
+
+            div.background{
+                background-position:center -150px;
+            }
+
+            div.foreground{
+                padding:15px;
+            }
+
+        }
+
     }
 
 }

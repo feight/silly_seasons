@@ -1,0 +1,100 @@
+
+
+@import "/UI/UI.variables.less";
+@import "/UI/UI.mixins.less";
+
+
+/*-------------------------------------------------------------------------- */
+/*
+        UI.stages.media
+*/
+/*-------------------------------------------------------------------------- */
+
+
+div#stages div.stage-media{
+
+    background:url("/static/UI/stages/media/media.background.jpg") center center no-repeat;
+    padding:35px 0 160px 0;
+    background-size:cover;
+    z-index:1;
+
+    @media @mobile{
+        padding-bottom:35px;
+    }
+
+    h1{
+        padding:60px 25px 10px 25px;
+    }
+
+    a.media-box{
+
+        box-shadow:0 0 3px rgba(0, 0, 0, .3);
+        border:2px solid #fff;
+        border-radius:3px;
+        position:relative;
+        margin:0 0 25px 0;
+        min-height:300px;
+        background:#fff;
+        cursor:pointer;
+        display:block;
+
+        span{
+            background:url("/static/UI/stages/media/media.block.label.background.png") left bottom repeat-x;
+            box-shadow:0 1px 1px rgba(0, 0, 0, .3);
+           .transition(opacity .3s ease-in);
+            padding:30px 5px 6px 25px;
+            position:absolute;
+            font-family:silly;
+            font-size:25px;
+            display:block;
+            opacity:.85;
+            width:100%;
+            color:#fff;
+            bottom:0;
+            left:0;
+        }
+
+        &:hover span{
+            opacity:1;
+        }
+
+        &.media-box-wallpaper{
+            background:url("/static/UI/stages/media/media.background.jpg") center center no-repeat;
+            background-size:100%;
+        }
+
+        &.media-box-video{
+            background:url("/static/UI/stages/media/media.block.video.background.jpg") center center no-repeat;
+            background-size:cover;
+        }
+
+    }
+
+}
+
+#youtube-modal{
+
+    .modal-header{
+        border-bottom:none;
+    }
+
+    .modal-body{
+        padding-bottom:10px;
+    }
+
+    iframe{
+        min-height:600px;
+        margin-top:5px;
+        height:100%;
+        width:100%;
+    }
+
+    @media @mobile{
+
+        iframe{
+            min-height:300px;
+        }
+
+    }
+
+}

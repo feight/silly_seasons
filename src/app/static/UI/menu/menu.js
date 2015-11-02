@@ -86,17 +86,23 @@
 
                 var href = $(this).attr("href");
 
-                if(href.indexOf("#") === 0){
+                if(
+                    href.indexOf("#") === 0 ||
+                    $(this).hasClass("logo")
+                ){
 
                     $(this).click(function(e){
 
                         var id = href.replace(/#/g, "");
+                        var top = 0;
 
-                        body.stop().animate({ scrollTop : $("#anchor-" + id).offset().top }, 500, "swing", function(){
+                        if(!$(this).hasClass("logo")){
+                            top = $("#anchor-" + id).offset().top;
+                        }
 
-                            // win.trigger("scroll.banner");
+                        console.log("WTF");
 
-                        });
+                        body.stop().animate({ scrollTop : top }, 500, "swing");
 
                         e.preventDefault();
 
