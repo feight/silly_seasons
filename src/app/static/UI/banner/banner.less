@@ -39,106 +39,51 @@
 
 div#banner{
 
+    background:@background;
     overflow:hidden;
     position:fixed;
-    height:@height;
-    width:100%;
+    height:100vh;
+    width:100vw;
     top:0;
 
     div.stretch-wrap{
-       .transform(translate(-50%, -50%));
-        height:100% + (100% * @offset);
-        width:100% + (100% * @offset);
-        background:@background;
-        position:absolute;
-        z-index:0;
-        left:50%;
-        top:50%;
+        height:100%;
+        width:100%;
     }
 
     div.stretch{
-        height:@height + (@height * @offset);
-        position:absolute;
-        overflow:hidden;
-        z-index:-999998;
-        opacity:1;
-        padding:0;
-        margin:0;
-        left:0;
-        top:0;
+        background-image:url("/static/UI/banner/banner.jpg");
+        background-position:center center;
+        background-repeat:no-repeat;
+        background-size:cover;
+        height:100%;
+        width:100%;
     }
 
     img{
-        height:@height + (@height * @offset);
-        width:@width + (@width * @offset);
-        position:absolute;
-        z-index:-999999;
-        max-height:none;
-        max-width:none;
-        border:none;
-        padding:0;
-        margin:0;
-        top:0;
+        display:none;
     }
 
 }
 
 div#stages{
-    top:@height;
-}
-
-@media @tablet{
-
-    div#stages{
-        margin:85px 0 0 0;
-    }
-
-    div#banner{
-
-        height:@height_tablet;
-        margin:85px 0 0 0;
-
-        div.stretch{
-            height:@height_tablet + (@height_tablet * @offset);
-        }
-
-        img{
-            height:@height_tablet + (@height_tablet * @offset);
-            width:@width_tablet + (@width_tablet * @offset);
-        }
-
-    }
-
-    div#stages{
-        top:@height_tablet;
-    }
-
+    top:100vh;
 }
 
 @media @mobile{
 
-    div#stages{
-        margin:50px 0 0 0;
-    }
-
     div#banner{
 
-        height:@height_mobile;
-        margin:50px 0 0 0;
+        height:80vh;
 
         div.stretch{
-            height:@height_mobile + (@height_mobile * @offset);
-        }
-
-        img{
-            height:@height_mobile + (@height_mobile * @offset);
-            width:@width_mobile + (@width_mobile * @offset);
+            background-position:center bottom;
         }
 
     }
 
     div#stages{
-        top:@height_mobile;
+        top:80vh;
     }
 
 }

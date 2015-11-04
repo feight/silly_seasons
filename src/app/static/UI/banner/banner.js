@@ -28,30 +28,8 @@
 
             var wrap = $("#banner div.stretch-wrap");
             var stretch = $("#banner div.stretch");
-            var image = $("#banner img");
             var doc = $(document);
             var win = $(window);
-
-            image.load(function(){
-
-                $(window).trigger("resize.banner");
-                $(window).trigger("scroll.banner");
-
-            });
-
-            win.bind("resize.banner", function(){
-
-                var widthWin = win.width();
-                var width = Math.floor(widthWin + (widthWin * (10 / 100)));
-                var offset = Math.floor((width - image.width()) / 2);
-
-                stretch.css({
-                    width : width
-                });
-
-                image.css("left", offset);
-
-            });
 
             win.bind("scroll.banner", function(){
 
