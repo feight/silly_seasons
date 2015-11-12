@@ -95,7 +95,7 @@ handlers:
   script: gaext.scripts.default.app
 
 - url: /pages
-  static_dir: app/pages
+  static_dir: app/templates/pages
   application_readable: true
 
 

@@ -37,7 +37,7 @@ module.exports = function(grunt){
         cwd : "src/app",
         bundles : "bundles",
         templates : [
-            "src/app/{pages,extensions}"
+            "src/app/templates/{pages,extensions}"
         ],
         clean : [
             "src/**/*.pyc",
